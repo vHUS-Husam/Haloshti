@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1026" />
+    <title>عيد ميلاد حلاشة🎂</title>
+    <meta name="description" content="موقع عيد ميلاد خاص بحلا" />
+    <link rel="stylesheet" href="default.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="backdrop-glow backdrop-glow-1"></div>
+      <div class="backdrop-glow backdrop-glow-2"></div>
+
+      <div class="intro-overlay" id="introOverlay" aria-live="polite">
+        <div class="intro-glow intro-glow-1"></div>
+        <div class="intro-glow intro-glow-2"></div>
+        <div class="intro-card">
+          <p class="intro-kicker">بحبكي🩵</p>
+          <h2>عيد ميلاد حلوشتي</h2>
+          <p class="intro-message">مليان حب وحنان 🩵</p>
+          <button class="intro-button" id="startCelebration" type="button">ابدأ الاحتفال</button>
+        </div>
+      </div>
+
+      <div class="gift-overlay" id="giftOverlay">
+        <div class="gift-stage">
+          <div class="lock-panel" id="lockPanel">
+            <div class="gift-lock-message" id="giftLockMessage">هممم🤔ايش الكلمة يا ترى</div>
+            <div class="password-row">
+              <input
+                id="giftPassword"
+                type="password"
+                maxlength="4"
+                placeholder="••••"
+                aria-label="كلمة السر"
+                autocomplete="off"
+                inputmode="numeric"
+              />
+              <button class="unlock-button" id="unlockGift" type="button">فتح</button>
+            </div>
+            <div class="password-error" id="passwordError" aria-live="polite"></div>
+          </div>
+
+          <div class="gift-box-wrap">
+            <button class="gift-box" id="giftBox" type="button" aria-label="فتح الهدية" disabled>
+              <span class="gift-lid"></span>
+              <span class="gift-ribbon ribbon-horizontal"></span>
+              <span class="gift-ribbon ribbon-vertical"></span>
+            </button>
+            <span class="gift-label" id="giftLabel">سووووون</span>
+          </div>
+
+          <div class="gift-note hidden" id="giftNote">
+            داخل هذه الهدية: كل سنة وأنتِ أجمل، وأحلى هدية هي وجودك في حياتنا 💖
+          </div>
+        </div>
+      </div>
+
+      <header class="top-tag">🎉 HBD Haloosh</header>
+
+      <main class="birthday-card hidden" id="celebrationCard">
+        <div class="card-glow"></div>
+
+        <section class="hero-copy">
+          <p class="mini-label">لأجمل روح في العالم</p>
+          <h1 class="hero-title"><span>حلاشة</span> <span class="title-soft">الحلوة</span></h1>
+          <p class="subtitle">عيد ميلاد سعيد 🩵</p>
+          <p class="message">
+            كل سنة وأنتِ أغلى ما في قلبي، وأجمل ما في الدنيا 🌷
+          </p>
+
+          <div class="gift-row" aria-label="أيقونات احتفال">
+            <span>✨</span>
+            <span>💌</span>
+            <span>🎂</span>
+            <span>🌷</span>
+          </div>
+
+          <section class="mini-game" id="miniGame" aria-live="polite">
+            <h2>لعبة الذاكرة</h2>
+            <p id="gamePrompt">اكتشف الأزواج المتطابقة 💞</p>
+            <div class="memory-grid" id="memoryGrid" aria-label="لعبة الذاكرة">
+              <button class="memory-card" type="button" data-pair="heart" data-value="🩵">?</button>
+              <button class="memory-card" type="button" data-pair="sparkle" data-value="🫂">?</button>
+              <button class="memory-card" type="button" data-pair="cake" data-value="🎂">?</button>
+              <button class="memory-card" type="button" data-pair="heart" data-value="🩵">?</button>
+              <button class="memory-card" type="button" data-pair="sparkle" data-value="🫂">?</button>
+              <button class="memory-card" type="button" data-pair="cake" data-value="🎂">?</button>
+            </div>
+            <p class="game-status" id="gameStatus"></p>
+            <div class="game-controls">
+              <span id="moveCount" aria-live="polite">المحاولات: 0</span>
+              <button class="game-reset" id="resetGame" type="button">إعادة اللعبة</button>
+            </div>
+            <div class="typewriter-box hidden" id="typewriterBox">
+              <div id="typewriterText"></div>
+              <button class="message-expand hidden" id="toggleMessage" type="button" aria-expanded="false">
+                قراءة الرسالة كاملة
+              </button>
+            </div>
+          </section>
+
+          <button class="replay-button" id="replayGift" type="button">افتحي الهدية مرة ثانية</button>
+        </section>
+
+        <aside class="details-panel">
+          <div class="date-box">
+            <span class="date-label">تاريخ ميلاد حلوتي</span>
+            <strong>7 / 10 / 2008</strong>
+          </div>
+
+          <section class="age-duration" aria-label="المدة منذ يوم الميلاد">
+            <h2>من يوم ميلاد حلوشة لليوم</h2>
+            <div class="age-duration-values">
+              <div class="age-duration-item"><span id="elapsedYears">0</span><small>سنة</small></div>
+              <div class="age-duration-item"><span id="elapsedDays">0</span><small>يوم</small></div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="photo-banner" aria-label="صور حلا">
+          <button class="photo-trigger" type="button" data-photo-index="0" aria-label="تكبير الصورة الأولى">
+            <img src="hala-1.jpg" alt="صورة حلا الأولى" />
+            <span>اضغطي للتكبير ✨</span>
+          </button>
+          <button class="photo-trigger" type="button" data-photo-index="1" aria-label="تكبير الصورة الثانية">
+            <img src="hala-2.jpg" alt="صورة حلا الثانية" />
+            <span>اضغطي للتكبير ✨</span>
+          </button>
+        </section>
+      </main>
+
+      <dialog class="photo-viewer" id="photoViewer" aria-label="عارض الصور">
+        <div class="photo-viewer-content">
+          <button class="photo-viewer-close" id="closePhotoViewer" type="button" aria-label="إغلاق">×</button>
+          <button class="photo-viewer-nav" id="previousPhoto" type="button" aria-label="الصورة السابقة">‹</button>
+          <img id="viewerImage" src="hala-1.jpg" alt="" />
+          <button class="photo-viewer-nav" id="nextPhoto" type="button" aria-label="الصورة التالية">›</button>
+          <span class="photo-viewer-counter" id="photoViewerCounter" aria-live="polite"></span>
+        </div>
+      </dialog>
+
+      <div class="floating-hearts" aria-hidden="true">
+        <span style="--i:1">❤</span>
+        <span style="--i:2">❤</span>
+        <span style="--i:3">❤</span>
+        <span style="--i:4">❤</span>
+        <span style="--i:5">❤</span>
+        <span style="--i:6">❤</span>
+      </div>
+
+      <div class="ambient-sparkles" aria-hidden="true">
+        <span style="--x: 8%; --y: 18%; --d: 0.8s;">✦</span>
+        <span style="--x: 18%; --y: 32%; --d: 1.3s;">✧</span>
+        <span style="--x: 26%; --y: 72%; --d: 1.8s;">✦</span>
+        <span style="--x: 38%; --y: 16%; --d: 2.2s;">✧</span>
+        <span style="--x: 49%; --y: 52%; --d: 0.9s;">✦</span>
+        <span style="--x: 63%; --y: 24%; --d: 2.5s;">✧</span>
+        <span style="--x: 76%; --y: 66%; --d: 1.7s;">✦</span>
+        <span style="--x: 84%; --y: 20%; --d: 1.2s;">✧</span>
+        <span style="--x: 92%; --y: 38%; --d: 2.1s;">✦</span>
+      </div>
+
+      <button id="musicToggle" class="music-toggle" type="button" aria-label="تشغيل أو كتم الموسيقى" title="تشغيل الموسيقى">
+        <span id="musicIcon">♫</span>
+      </button>
+      <span id="musicStatus" class="music-status" aria-live="polite"></span>
+      <label class="music-volume-control" for="musicVolume">
+        <span>مستوى الصوت</span>
+        <input id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="مستوى صوت الموسيقى" />
+      </label>
+
+      <audio id="birthdayAudio" loop preload="auto">
+        <source src="aud.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <script src="functions.js"></script>
+  </body>
+</html>
